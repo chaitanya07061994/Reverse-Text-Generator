@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Reverse Text Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3494E6, #EC6EAD);
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .generator-container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .output-container {
+            background-color: #f9f9f9;
+            min-height: 50px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="generator-container">
+        <h1>Stylish Reverse Text Generator</h1>
+        <div class="input-container">
+            <input id="input-text" type="text" placeholder="Enter text to reverse">
+        </div>
+        <button id="reverse-button">Reverse</button>
+        <div class="output-container">
+            <p id="reversed-text"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('reverse-button').addEventListener('click', () => {
+            const inputText = document.getElementById('input-text').value;
+            const reversedText = reverseString(inputText);
+            document.getElementById('reversed-text').innerText = reversedText;
+        });
+
+        function reverseString(str) {
+            return str.split('').reverse().join('');
+        }
+    </script>
+</body>
+</html>
